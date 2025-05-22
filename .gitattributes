@@ -1,1 +1,2 @@
+*.MOV filter=lfs diff=lfs merge=lfs -text
 foto&video/1734865356987.076904.MOV filter=lfs diff=lfs merge=lfs -text
