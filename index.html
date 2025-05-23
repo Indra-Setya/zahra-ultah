@@ -364,18 +364,15 @@
     </style>
   </head>
   <body class="min-h-screen romantic-bg text-gray-800 relative">
-    <audio id="background-music" loop autoplay>
-      <source
-        src="https://www.soundjay.com/music/sounds/romantic-piano-1.mp3"
-        type="audio/mpeg"
-      />
+    <audio id="background-music" loop>
+      <source src="audio/HAPPY BIRTHDAY INSTRUMENTAL.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
     <div id="confetti-container" class="confetti-container hidden"></div>
 
     <button
       id="play-music-button"
-      class="fixed bottom-4 right-4 bg-pink-500 text-white p-3 rounded-full shadow-lg z-50 hidden hover:bg-pink-600 transition-colors"
+      class="fixed bottom-4 right-4 bg-pink-500 text-white p-3 rounded-full shadow-lg z-50 hover:bg-pink-600 transition-colors"
       aria-label="Putar Musik Latar"
     >
       Putar Musik 🎶
@@ -442,41 +439,41 @@
       <h2 class="text-4xl font-bold text-center romantic-text mb-12">
         Momen-Momen Indah Kita 📸💖
       </h2>
-      <div class="swiper">
+      <div class="swiper" id="photoSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <img
-              src="/foto&video/1D5455D2-90F0-47C5-8DBA-044FABF09FD7.jpg"
+              src="./foto&video/1D5455D2-90F0-47C5-8DBA-044FABF09FD7.jpg"
               alt="Momen Kita 1 - Piknik Romantis"
             />
           </div>
           <div class="swiper-slide">
             <img
-              src="/foto&video/FAA406B7-3430-49D5-967D-4F8E4FC8B69B.jpg"
+              src="./foto&video/CB51979B-F512-4DDB-8C29-09BED4984C13.jpg"
               alt="Momen Kita 2 - Kencan Malam"
             />
           </div>
           <div class="swiper-slide">
             <img
-              src="/foto&video/BCAB16DA-5F39-46CD-B6AB-36DB123E4D69.jpg"
+              src="./foto&video/BCAB16DA-5F39-46CD-B6AB-36DB123E4D69.jpg"
               alt="Momen Kita 3 - Pelukan Hangat"
             />
           </div>
           <div class="swiper-slide">
             <img
-              src="/foto&video/IMG_1584.jpg"
+              src="./foto&video/IMG_1584.jpg"
               alt="Momen Kita 4 - Pantai Sunset"
             />
           </div>
           <div class="swiper-slide">
             <img
-              src="/foto&video/C88BD045-C68A-47C1-AF09-905FA404B9E1.jpg"
+              src="./foto&video/C88BD045-C68A-47C1-AF09-905FA404B9E1.jpg"
               alt="Momen Kita 5 - Dansa"
             />
           </div>
           <div class="swiper-slide">
             <img
-              src="/foto&video/451303B8-801B-4A68-82E9-94733345CB3E.jpg"
+              src="./foto&video/451303B8-801B-4A68-82E9-94733345CB3E.jpg"
               alt="Momen Kita 6 - Kebahagiaan"
             />
           </div>
@@ -493,31 +490,34 @@
       <h2 class="text-4xl font-bold text-center romantic-text mb-12">
         Kompilasi Video Lucu Kita! 🎥💖
       </h2>
-      <div class="swiper">
+      <div class="swiper" id="videoSwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <video
-              src="/foto&video/IMG_4363.MOV"
+              src="/foto&video/IMG_4362.mp4"
               controls
-              class="w-full h-64 object-cover rounded-lg"
+              class="w-full h-full object-contain rounded-lg"
+              preload="metadata"
             >
               Your browser does not support the video tag.
             </video>
           </div>
           <div class="swiper-slide">
             <video
-              src="/foto&video/1734865356987.076904.MOV"
+              src="/foto&video/lv_7229595818037087490_20231225201538.mp4"
               controls
-              class="w-full h-64 object-cover rounded-lg"
+              class="w-full h-full object-contain rounded-lg"
+              preload="metadata"
             >
               Your browser does not support the video tag.
             </video>
           </div>
           <div class="swiper-slide">
             <video
-              src="/foto&video/copy_359C7750-674A-40E3-883A-DC22D0F9E2D8.mp4"
+              src="./foto&video/copy_359C7750-674A-40E3-883A-DC22D0F9E2D8.mp4"
               controls
-              class="w-full h-64 object-cover rounded-lg"
+              class="w-full h-full object-contain rounded-lg"
+              preload="metadata"
             >
               Your browser does not support the video tag.
             </video>
@@ -529,8 +529,79 @@
     </section>
 
     <div id="imageModal" class="modal">
-      <span class="modal-close">&times;</span>
+      <span class="modal-close" id="closeModal">&times;</span>
       <img class="modal-content" id="img01" />
+    </div>
+    <section
+      id="vertical-photo-gallery-section"
+      class="py-16 px-4 md:px-8 bg-white bg-opacity-95 shadow-inner scroll-animate relative z-10"
+    >
+      <div class="background-hearts"></div>
+      <h2 class="text-4xl font-bold text-center romantic-text mb-12">
+        Galeri Momen Vertikal 📸✨
+      </h2>
+      <p class="text-center text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+        Lihatlah koleksi momen-momen indah kita yang terekam dalam bidikan
+        vertikal, penuh kenangan manis dan kebahagiaan.
+      </p>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-5xl mx-auto"
+        id="vertical-photo-grid"
+      >
+        <img
+          src="foto&video/IMG_5527.JPG"
+          alt="Momen Vertikal 1"
+          class="w-full h-auto object-cover rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        />
+        <img
+          src="/foto&video/IMG_5378.PNG"
+          alt="Momen Vertikal 2"
+          class="w-full h-auto object-cover rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        />
+        <img
+          src="/foto&video/IMG_2725.jpg"
+          alt="Momen Vertikal 3"
+          class="w-full h-auto object-cover rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        />
+        <img
+          src="/foto&video/A03D7A65-751B-4F36-97ED-BE0407BED00B.jpg"
+          alt="Momen Vertikal 4"
+          class="w-full h-auto object-cover rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        />
+        <img
+          src="/foto&video/3EBCF860-F966-49FF-9191-CDBEB63F4C97.jpg"
+          alt="Momen Vertikal 5"
+          class="w-full h-auto object-cover rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        />
+        <img
+          src="/foto&video/WhatsApp Image 2025-05-23 at 12.50.07_ea46b6cf.jpg"
+          alt="Momen Vertikal 6"
+          class="w-full h-auto object-cover rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        />
+        <img
+          src="/foto&video/IMG_1551.jpg"
+          alt="Momen Vertikal 7"
+          class="w-full h-auto object-cover rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        />
+        <img
+          src="/foto&video/IMG_5527.JPG"
+          alt="Momen Vertikal 8"
+          class="w-full h-auto object-cover rounded-lg shadow-md cursor-pointer transform transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+      <span class="modal-close" aria-label="Tutup">&times;</span>
+      <img class="modal-content" id="img01" alt="Gambar Diperbesar" />
     </div>
 
     <section
@@ -547,7 +618,7 @@
           aria-label="Klik untuk membuka hadiah"
         >
           <img
-            src="https://www.svgrepo.com/show/369792/gift.svg"
+            src="foto&video/Gold-Gift-Box-PNG.png"
             alt="Gift Box"
             class="w-32 h-32 mb-4"
           />
@@ -557,7 +628,7 @@
         </div>
         <div
           id="gift-content"
-          class="hidden bg-white p-8 rounded-xl shadow-2xl max-w-xl mx-auto border-4 border-pink-300"
+          class="hidden bg-white p-8 rounded-xl shadow-2xl max-w-xl mx-auto border-4 border-pink-300 animate-scale-in"
         >
           <h3 class="text-3xl font-bold text-blue-600 mb-4">SELAMAT! 🎉</h3>
           <p class="text-lg text-gray-700 mb-6">
@@ -568,7 +639,7 @@
             <span class="interactive-emoji">😉</span>
           </p>
           <img
-            src="/foto&video/Gemini_Generated_Image_su6rymsu6rymsu6r.png"
+            src="foto&video/Gemini_Generated_Image_su6rymsu6rymsu6r.png"
             alt="Voucher Kencan"
             class="mx-auto rounded-lg shadow-md mb-4"
           />
@@ -598,7 +669,10 @@
           Temukan semua pasangan emoji untuk memenangkan game!
           <span class="interactive-emoji">🤩</span>
         </p>
-        <div id="memory-game-status" class="text-center"></div>
+        <div
+          id="memory-game-status"
+          class="text-center text-xl font-semibold mb-4"
+        ></div>
         <div
           id="memory-game-board"
           class="grid grid-cols-3 sm:grid-cols-4 gap-4"
@@ -638,8 +712,11 @@
 
         <p class="text-md text-gray-700 mb-4">
           Huruf yang salah:
-          <span id="incorrect-guesses" class="font-semibold text-red-500"></span
-          >(<span id="attempts-left"></span> kesempatan tersisa)
+          <span
+            id="incorrect-guesses"
+            class="font-semibold text-red-500"
+          ></span>
+          (<span id="attempts-left"></span> kesempatan tersisa)
         </p>
 
         <div id="guess-input-area" class="flex flex-col items-center w-full">
@@ -685,13 +762,15 @@
       id="message-section"
       class="py-16 px-4 md:px-8 romantic-bg scroll-animate relative z-10"
     >
-      <h2 class="text-4xl font-bold text-blue-700 mb-12">Pesan Dari Hati 💌</h2>
+      <h2 class="text-4xl font-bold text-blue-700 mb-12 text-center">
+        Pesan Dari Hati 💌
+      </h2>
       <div
         class="bg-white p-8 rounded-xl shadow-2xl max-w-2xl mx-auto border-4 border-pink-300"
       >
         <p
           id="message-text"
-          class="text-lg md:text-xl text-gray-700 leading-relaxed italic"
+          class="text-lg md:text-xl text-gray-700 leading-relaxed italic text-center"
         >
           "Sayangku, cantikku, manisku
           <br /><br />
@@ -731,11 +810,18 @@
       const heroScrollButton = document.getElementById("hero-scroll-button");
       const giftSection = document.getElementById("gift-section");
       const playMusicButton = document.getElementById("play-music-button");
+      const backgroundMusic = document.getElementById("background-music");
 
       // Audio for gift box
       const giftSound = new Audio(
         "https://www.soundjay.com/buttons/sounds/button-1.mp3"
       ); // Contoh suara, ganti dengan yang sesuai
+      const matchSound = new Audio(
+        "https://www.soundjay.com/misc/sounds/success-sound-2.mp3"
+      ); // Suara untuk memory game match
+      const flipSound = new Audio(
+        "https://www.soundjay.com/misc/sounds/page-flip-1.mp3"
+      ); // Suara untuk flip kartu
 
       // --- Confetti Animation ---
       function showConfetti() {
@@ -772,12 +858,21 @@
       }
 
       // --- Smooth Scroll for Hero Button ---
-      if (heroScrollButton && giftSection) {
+      if (heroScrollButton) {
         heroScrollButton.addEventListener("click", () => {
           // Scroll ke bagian pertama setelah hero (misal: photo-slideshow-section)
           document
             .getElementById("photo-slideshow-section")
             .scrollIntoView({ behavior: "smooth" });
+          // Auto-play music if not playing (user interaction initiated)
+          if (backgroundMusic.paused) {
+            backgroundMusic
+              .play()
+              .catch((e) => console.log("Musik gagal diputar:", e));
+            playMusicButton.textContent = "Berhenti Musik 🔇";
+            playMusicButton.classList.remove("bg-pink-500");
+            playMusicButton.classList.add("bg-red-500");
+          }
         });
       }
 
@@ -819,28 +914,148 @@
 
       window.addEventListener("scroll", () => {
         const scrollTop = window.scrollY;
+        // Hanya terapkan parallax jika masih di dalam atau dekat hero section
         const heroRect = heroSection.getBoundingClientRect();
         const heroHeight = heroSection.offsetHeight;
 
-        // Calculate scroll percentage relative to hero section's visibility
-        let scrollPercent = 0;
+        // Hitung persentase scroll relatif terhadap hero section
+        // 0 saat hero di atas, 1 saat hero sudah lewat
+        let scrollRatio = 0;
         if (heroRect.top < 0 && heroRect.bottom > 0) {
-          scrollPercent = -heroRect.top / heroHeight;
-        } else if (heroRect.top >= 0) {
-          scrollPercent = 0;
+          scrollRatio = Math.abs(heroRect.top) / heroHeight;
         } else if (heroRect.bottom <= 0) {
-          scrollPercent = 1;
+          scrollRatio = 1;
         }
 
         parallaxLayers.forEach((layer, index) => {
           // Adjust speed for different layers
-          const speed = (index + 1) * 0.15; // Layer 1: 0.15, Layer 2: 0.30, etc.
-          const yPos = -scrollTop * speed;
+          // Layer 1 (belakang): bergerak lebih lambat (misal 0.1)
+          // Layer 2 (depan): bergerak lebih cepat (misal 0.2)
+          const speed = (index + 1) * 0.1;
+          const yPos = scrollTop * speed; // Bergerak searah scroll
           layer.style.transform = `translateY(${yPos}px) scale(${
-            1 + speed * 0.2
-          })`; // Sedikit efek scale
+            1 + speed * 0.2 * scrollRatio
+          })`; // Sedikit efek scale saat scroll
         });
       });
+
+      // --- Background Music Toggle ---
+      let isPlaying = false; // Awalnya musik tidak otomatis diputar
+
+      // Sematkan event listener untuk tombol play/pause musik
+      if (playMusicButton && backgroundMusic) {
+        // Coba putar musik secara otomatis saat interaksi pertama
+        const tryPlayMusic = () => {
+          if (backgroundMusic.paused) {
+            backgroundMusic
+              .play()
+              .then(() => {
+                isPlaying = true;
+                playMusicButton.textContent = "Berhenti Musik 🔇";
+                playMusicButton.classList.remove("bg-pink-500");
+                playMusicButton.classList.add("bg-red-500");
+                document.removeEventListener("click", tryPlayMusic); // Hapus listener setelah sukses
+                document.removeEventListener("touchstart", tryPlayMusic);
+              })
+              .catch((e) => {
+                console.log("Auto-play blocked, user needs to click:", e);
+                // Biarkan tombol terlihat jika auto-play diblokir
+                playMusicButton.classList.remove("hidden");
+              });
+          }
+        };
+
+        // Tambahkan event listener untuk interaksi pertama pengguna
+        document.addEventListener("click", tryPlayMusic, { once: true });
+        document.addEventListener("touchstart", tryPlayMusic, { once: true });
+
+        playMusicButton.addEventListener("click", () => {
+          if (isPlaying) {
+            backgroundMusic.pause();
+            playMusicButton.textContent = "Putar Musik 🎶";
+            playMusicButton.classList.remove("bg-red-500");
+            playMusicButton.classList.add("bg-pink-500");
+          } else {
+            backgroundMusic
+              .play()
+              .then(() => {
+                playMusicButton.textContent = "Berhenti Musik 🔇";
+                playMusicButton.classList.remove("bg-pink-500");
+                playMusicButton.classList.add("bg-red-500");
+              })
+              .catch((e) => console.log("Gagal memutar musik:", e));
+          }
+          isPlaying = !isPlaying;
+        });
+      }
+
+      // --- Swiper (Photo and Video Slideshows) ---
+      // Inisialisasi Swiper untuk foto
+      const photoSwiper = new Swiper("#photoSwiper", {
+        loop: true, // Looping slideshow
+        autoplay: {
+          delay: 3500, // Durasi setiap slide 3.5 detik
+          disableOnInteraction: false, // Lanjutkan autoplay setelah interaksi pengguna
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: "#photoSwiper .swiper-button-next",
+          prevEl: "#photoSwiper .swiper-button-prev",
+        },
+      });
+
+      // Inisialisasi Swiper untuk video
+      const videoSwiper = new Swiper("#videoSwiper", {
+        loop: true,
+        autoplay: false, // Autoplay untuk video mungkin tidak diinginkan agar user bisa kontrol
+        navigation: {
+          nextEl: "#videoSwiper .swiper-button-next",
+          prevEl: "#videoSwiper .swiper-button-prev",
+        },
+        on: {
+          slideChange: function () {
+            // Pause all videos when slide changes
+            document.querySelectorAll("#videoSwiper video").forEach((video) => {
+              video.pause();
+            });
+            // Play video on current slide
+            const currentVideo =
+              this.slides[this.activeIndex].querySelector("video");
+            if (currentVideo) {
+              currentVideo
+                .play()
+                .catch((e) => console.log("Gagal play video:", e));
+            }
+          },
+        },
+      });
+
+      // --- Image Modal (Lightbox) ---
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("img01");
+      const spanClose = document.getElementById("closeModal");
+
+      document.querySelectorAll("#photoSwiper img").forEach((img) => {
+        img.onclick = function () {
+          modal.style.display = "flex";
+          modalImg.src = this.src;
+          modalImg.alt = this.alt; // Menambahkan alt text untuk aksesibilitas
+        };
+      });
+
+      spanClose.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // Close modal when clicking outside the image
+      modal.onclick = function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
 
       // --- Memory Game Logic ---
       const memoryGameContainer = document.getElementById(
@@ -853,25 +1068,25 @@
       );
 
       const initialMemoryCards = [
-        { id: 1, value: "💙" },
-        { id: 2, value: "💙" },
-        { id: 3, value: "🐢" },
-        { id: 4, value: "🐢" },
-        { id: 5, value: "🦈" },
-        { id: 6, value: "🦈" },
-        { id: 7, value: "🐳" },
-        { id: 8, value: "🐳" },
-        { id: 9, value: "💖" },
-        { id: 10, value: "💖" },
-        { id: 11, value: "🌟" },
-        { id: 12, value: "🌟" },
+        { id: 1, value: "💙", name: "Hati Biru" },
+        { id: 2, value: "💙", name: "Hati Biru" },
+        { id: 3, value: "🐢", name: "Kura-kura" },
+        { id: 4, value: "🐢", name: "Kura-kura" },
+        { id: 5, value: "🦈", name: "Hiu" },
+        { id: 6, value: "🦈", name: "Hiu" },
+        { id: 7, value: "🐳", name: "Paus" },
+        { id: 8, value: "🐳", name: "Paus" },
+        { id: 9, value: "💖", name: "Hati Merah Muda" },
+        { id: 10, value: "💖", name: "Hati Merah Muda" },
+        { id: 11, value: "🌟", name: "Bintang" },
+        { id: 12, value: "🌟", name: "Bintang" },
       ];
 
       let cards = [];
       let flippedCards = [];
       let attempts = 0;
       let matchesFound = 0;
-      let gameOver = false;
+      let gameOverMemory = false; // Mengganti nama variabel agar tidak konflik
       let lockBoard = false; // To prevent rapid clicks
 
       function shuffleMemoryCards() {
@@ -886,7 +1101,7 @@
         flippedCards = [];
         attempts = 0;
         matchesFound = 0;
-        gameOver = false;
+        gameOverMemory = false;
         lockBoard = false;
         renderMemoryBoard();
         updateMemoryStatus();
@@ -903,16 +1118,14 @@
             "h-24",
             "sm:w-28",
             "sm:h-28",
-            "flex",
-            "items-center",
-            "justify-center",
             "rounded-lg",
             "shadow-md",
             "cursor-pointer",
             "transition-all",
             "duration-300",
             "transform",
-            "perspective-1000"
+            "perspective-1000",
+            "hover:scale-105" // Menambahkan efek hover
           );
           cardElement.dataset.index = index;
 
@@ -926,15 +1139,16 @@
             "inset-0",
             "flex",
             "items-center",
-            "justify-content-center",
+            "justify-center",
             "text-5xl",
             "sm:text-6xl",
-            "transition-transform",
-            "duration-300",
-            "backface-hidden",
-            "bg-blue-300" // Always visible on front
+            "bg-blue-300" // Warna bagian depan kartu
           );
           cardFront.textContent = card.value;
+          cardFront.setAttribute(
+            "aria-label",
+            `Kartu dengan gambar ${card.name}`
+          );
 
           const cardBack = document.createElement("div");
           cardBack.classList.add(
@@ -943,16 +1157,14 @@
             "inset-0",
             "flex",
             "items-center",
-            "justify-content-center",
+            "justify-center",
             "text-3xl",
             "font-bold",
             "text-white",
-            "transition-transform",
-            "duration-300",
-            "backface-hidden",
-            "bg-blue-500" // Always visible on back (default)
+            "bg-blue-500" // Warna bagian belakang kartu
           );
           cardBack.textContent = "?";
+          cardBack.setAttribute("aria-label", "Sisi belakang kartu");
 
           cardInner.appendChild(cardFront);
           cardInner.appendChild(cardBack);
@@ -973,103 +1185,76 @@
           }
           if (card.matched) {
             cardElement.classList.add("opacity-70", "pointer-events-none"); // Make matched cards less opaque and unclickable
-          } else {
-            cardElement.classList.remove("opacity-70", "pointer-events-none");
           }
         });
       }
 
-      function updateMemoryStatus() {
-        if (gameOver) {
-          memoryGameStatus.innerHTML = `
-                      <div class="text-center p-6 bg-green-100 rounded-lg shadow-md animate-scale-in">
-                          <h4 class="text-3xl font-bold text-green-700 mb-4">SELAMAT! KAMU MENANG! 🎉🥳</h4>
-                          <p class="text-xl text-gray-700">Kamu berhasil menemukan semua pasangan dalam ${attempts} percobaan. Hebat! ✨</p>
-                      </div>
-                  `;
-          memoryGameRestartBtn.textContent = "Main Lagi 🔄";
-          showConfetti(); // Show confetti on win
-        } else {
-          memoryGameStatus.innerHTML = `
-                      <p class="text-lg text-gray-700">Percobaan: <span class="font-bold text-blue-600">${attempts}</span></p>
-                  `;
-          memoryGameRestartBtn.textContent = "Mulai Ulang Game ↩️";
-        }
-      }
-
       function handleMemoryCardClick(index) {
-        if (gameOver || lockBoard) return; // Prevent clicks if game is over or board is locked
+        if (
+          lockBoard ||
+          cards[index].flipped ||
+          cards[index].matched ||
+          gameOverMemory
+        ) {
+          return; // Jangan lakukan apa-apa jika terkunci, sudah terbuka, sudah cocok, atau game sudah selesai
+        }
+
+        flipSound.play(); // Play flip sound
+
         const clickedCard = cards[index];
-
-        if (clickedCard.flipped || clickedCard.matched) return; // Already flipped or matched
-
         clickedCard.flipped = true;
-        clickedCard.domElement.classList.add("flipped"); // Add 'flipped' class for CSS transition
+        clickedCard.domElement.classList.add("flipped");
 
-        flippedCards.push(index);
+        flippedCards.push(clickedCard);
 
         if (flippedCards.length === 2) {
           attempts++;
-          lockBoard = true; // Lock the board
-          const [firstIndex, secondIndex] = flippedCards;
-          const firstCard = cards[firstIndex];
-          const secondCard = cards[secondIndex];
+          lockBoard = true; // Kunci board sementara
+          updateMemoryStatus(); // Update status setelah percobaan
 
-          if (firstCard.value === secondCard.value) {
-            // Match found!
-            firstCard.matched = true;
-            secondCard.matched = true;
+          const [card1, card2] = flippedCards;
+
+          if (card1.value === card2.value) {
+            // Match!
+            matchSound.play(); // Play match sound
+            card1.matched = true;
+            card2.matched = true;
+            card1.domElement.classList.add("opacity-70", "pointer-events-none");
+            card2.domElement.classList.add("opacity-70", "pointer-events-none");
             matchesFound++;
-
-            // Visually mark as matched (e.g., lower opacity, disable clicks)
-            setTimeout(() => {
-              firstCard.domElement.classList.add(
-                "opacity-70",
-                "pointer-events-none"
-              );
-              secondCard.domElement.classList.add(
-                "opacity-70",
-                "pointer-events-none"
-              );
-              flippedCards = []; // Reset flipped cards
-              lockBoard = false; // Unlock the board
-              updateMemoryStatus(); // Update status after match
-
-              if (matchesFound === initialMemoryCards.length / 2) {
-                gameOver = true;
-                updateMemoryStatus();
-              }
-            }, 800); // Give time for flip animation
+            flippedCards = [];
+            lockBoard = false; // Buka board setelah match
+            if (matchesFound === initialMemoryCards.length / 2) {
+              gameOverMemory = true;
+              setTimeout(() => {
+                memoryGameStatus.textContent = `Selamat, kamu menemukan semua pasangan dalam ${attempts} percobaan! 🎉`;
+                showConfetti();
+              }, 500);
+            }
           } else {
-            // No match, flip them back
+            // No match, flip back after a delay
             setTimeout(() => {
-              firstCard.flipped = false;
-              secondCard.flipped = false;
-              firstCard.domElement.classList.remove("flipped");
-              secondCard.domElement.classList.remove("flipped");
-              flippedCards = []; // Reset flipped cards
-              lockBoard = false; // Unlock the board
-              updateMemoryStatus(); // Update status after mismatch
-            }, 1200); // Wait a bit longer to see the mismatch
+              card1.flipped = false;
+              card2.flipped = false;
+              card1.domElement.classList.remove("flipped");
+              card2.domElement.classList.remove("flipped");
+              flippedCards = [];
+              lockBoard = false; // Buka board setelah kartu dibalik kembali
+            }, 1000); // Delay 1 detik sebelum membalik kembali
           }
         }
       }
 
+      function updateMemoryStatus() {
+        memoryGameStatus.textContent = `Percobaan: ${attempts} | Pasangan ditemukan: ${matchesFound}/${
+          initialMemoryCards.length / 2
+        }`;
+      }
+
       memoryGameRestartBtn.addEventListener("click", shuffleMemoryCards);
 
-      // Initialize the game when the section is in view
-      const memoryGameSection = document.getElementById("memory-game-section");
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && !cards.length) {
-              // Only initialize if not already initialized
-              shuffleMemoryCards();
-            }
-          });
-        },
-        { threshold: 0.1 }
-      ).observe(memoryGameSection);
+      // Initialize the memory game when the page loads
+      shuffleMemoryCards();
 
       // --- Guess Word Game Logic ---
       const displayWordElement = document.getElementById("display-word");
@@ -1078,139 +1263,114 @@
       const attemptsLeftElement = document.getElementById("attempts-left");
       const guessInput = document.getElementById("guess-input");
       const guessButton = document.getElementById("guess-button");
-      const hintButton = document.getElementById("hint-button");
-      const gameMessageElement = document.getElementById("game-message");
+      const gameMessage = document.getElementById("game-message");
       const gameOverArea = document.getElementById("game-over-area");
       const gameOverMessage = document.getElementById("game-over-message");
       const playAgainButton = document.getElementById("play-again-button");
+      const hintButton = document.getElementById("hint-button");
       const guessInputArea = document.getElementById("guess-input-area");
 
-      const wordList = [
-        { word: "CINTA", hint: "Perasaan paling dalam" },
-        { word: "BAHAGIA", hint: "Perasaan senang dan puas" },
-        { word: "BERSAMAMU", hint: "Dimana kita selalu bersama" },
-        { word: "ROMANTIS", hint: "Suasana yang manis dan intim" },
-        { word: "SELAMANYA", hint: "Tanpa batas waktu" },
-        { word: "HADIAH", hint: "Apa yang kamu dapatkan hari ini" },
-        { word: "IMPIAN", hint: "Apa yang kamu harapkan di masa depan" },
-        { word: "ISTRI", hint: "Statusku di masa depan" }, // Tambahkan kata dan petunjuk yang lebih personal jika kamu mau!
+      const words = [
+        { word: "CINTA", hint: "Perasaan paling hangat di antara kita." },
+        { word: "SAYANG", hint: "Panggilan kesayanganku untukmu." },
+        { word: "BAHAGIA", hint: "Perasaanku saat bersamamu." },
+        { word: "SELAMANYA", hint: "Durasi cinta kita." },
+        { word: "MIMPI", hint: "Apa yang kita bangun bersama." },
+        { word: "ZAHRA", hint: "Nama paling indah di dunia." },
+        { word: "KASIH", hint: "Sinonim dari cinta." },
+        { word: "KENANGAN", hint: "Momen-momen indah yang kita ciptakan." },
       ];
 
       let selectedWord = "";
-      let guessedLetters = [];
-      let incorrectLetters = [];
-      const maxAttempts = 6;
-      let currentAttempts = 0;
+      let scrambledWord = [];
+      let correctGuesses = new Set();
+      let incorrectGuesses = new Set();
+      let attemptsLeft = 6;
+      let currentHint = "";
       let hintUsed = false;
 
-      function chooseWord() {
-        const randomIndex = Math.floor(Math.random() * wordList.length);
-        return wordList[randomIndex];
-      }
-
       function initializeGuessWordGame() {
-        const chosen = chooseWord();
-        selectedWord = chosen.word.toUpperCase();
-        guessedLetters = [];
-        incorrectLetters = [];
-        currentAttempts = 0;
-        hintUsed = false;
+        const randomIndex = Math.floor(Math.random() * words.length);
+        selectedWord = words[randomIndex].word.toUpperCase();
+        currentHint = words[randomIndex].hint;
 
-        displayWordElement.textContent = "";
-        incorrectGuessesElement.textContent = "";
-        attemptsLeftElement.textContent = maxAttempts;
-        gameMessageElement.textContent = "";
+        correctGuesses = new Set();
+        incorrectGuesses = new Set();
+        attemptsLeft = 6;
+        hintUsed = false;
+        gameMessage.textContent = "";
+
+        // Sembunyikan gameOverArea, tampilkan input area
+        gameOverArea.classList.add("hidden");
+        guessInputArea.classList.remove("hidden");
         guessInput.value = "";
         guessInput.disabled = false;
         guessButton.disabled = false;
         hintButton.disabled = false;
-        guessInputArea.classList.remove("hidden");
-        gameOverArea.classList.add("hidden");
-        renderGuessedWord();
+
+        updateGuessWordDisplay();
       }
 
-      function renderGuessedWord() {
+      function updateGuessWordDisplay() {
         let display = "";
-        for (const letter of selectedWord) {
-          if (guessedLetters.includes(letter)) {
-            display += letter + " ";
+        let allGuessed = true;
+        for (const char of selectedWord) {
+          if (correctGuesses.has(char)) {
+            display += char + " ";
           } else {
             display += "_ ";
+            allGuessed = false;
           }
         }
         displayWordElement.textContent = display.trim();
-        incorrectGuessesElement.textContent = incorrectLetters.join(", ");
-        attemptsLeftElement.textContent = maxAttempts - currentAttempts;
-      }
+        incorrectGuessesElement.textContent =
+          Array.from(incorrectGuesses).join(", ");
+        attemptsLeftElement.textContent = attemptsLeft;
 
-      function checkGameStatus() {
-        const currentDisplay = displayWordElement.textContent.replace(/ /g, "");
-        if (currentDisplay === selectedWord) {
-          gameMessageElement.textContent = "";
-          gameOverMessage.textContent = `SELAMAT! Kamu berhasil menebak kata "${selectedWord}"! 🎉🥳`;
-          endGame(true);
-        } else if (currentAttempts >= maxAttempts) {
-          gameMessageElement.textContent = "";
-          gameOverMessage.textContent = `MAAF, kamu kehabisan kesempatan! Kata rahasianya adalah "${selectedWord}". 😔`;
-          endGame(false);
+        if (allGuessed) {
+          endGuessWordGame(true);
+        } else if (attemptsLeft <= 0) {
+          endGuessWordGame(false);
         }
       }
 
-      function endGame(win) {
+      function handleGuess() {
+        const guess = guessInput.value.toUpperCase().trim();
+        guessInput.value = ""; // Clear input after guess
+
+        if (guess.length !== 1 || !/^[A-Z]$/.test(guess)) {
+          gameMessage.textContent = "Masukkan hanya satu huruf alfabet.";
+          return;
+        }
+
+        if (correctGuesses.has(guess) || incorrectGuesses.has(guess)) {
+          gameMessage.textContent = `Huruf '${guess}' sudah pernah ditebak.`;
+          return;
+        }
+
+        if (selectedWord.includes(guess)) {
+          correctGuesses.add(guess);
+          gameMessage.textContent = `Benar! '${guess}' ada di kata.`;
+        } else {
+          incorrectGuesses.add(guess);
+          attemptsLeft--;
+          gameMessage.textContent = `Salah! Huruf '${guess}' tidak ada.`;
+        }
+        updateGuessWordDisplay();
+      }
+
+      function endGuessWordGame(isWin) {
         guessInput.disabled = true;
         guessButton.disabled = true;
         hintButton.disabled = true;
         guessInputArea.classList.add("hidden");
         gameOverArea.classList.remove("hidden");
-        if (win) {
+
+        if (isWin) {
+          gameOverMessage.textContent = `Selamat, kamu berhasil menebak kata "${selectedWord}"! Kamu memang pintar! 🎉`;
           showConfetti();
-        }
-      }
-
-      function handleGuess() {
-        const guess = guessInput.value.toUpperCase();
-        guessInput.value = ""; // Clear input after guess
-
-        if (!guess || guess.length !== 1 || !/^[A-Z]$/.test(guess)) {
-          gameMessageElement.textContent = "Masukkan hanya satu huruf alfabet.";
-          return;
-        }
-
-        if (
-          guessedLetters.includes(guess) ||
-          incorrectLetters.includes(guess)
-        ) {
-          gameMessageElement.textContent = `Huruf '${guess}' sudah kamu tebak!`;
-          return;
-        }
-
-        gameMessageElement.textContent = ""; // Clear previous message
-
-        if (selectedWord.includes(guess)) {
-          guessedLetters.push(guess);
         } else {
-          incorrectLetters.push(guess);
-          currentAttempts++;
-        }
-
-        renderGuessedWord();
-        checkGameStatus();
-      }
-
-      function handleHint() {
-        if (hintUsed) {
-          gameMessageElement.textContent = "Kamu sudah menggunakan petunjuk!";
-          return;
-        }
-
-        const currentHint = wordList.find(
-          (w) => w.word.toUpperCase() === selectedWord
-        ).hint;
-        if (currentHint) {
-          gameMessageElement.textContent = `Petunjuk: ${currentHint}`;
-          hintUsed = true;
-        } else {
-          gameMessageElement.textContent = "Tidak ada petunjuk untuk kata ini.";
+          gameOverMessage.textContent = `Yah, kamu kalah. Kata rahasianya adalah "${selectedWord}". Jangan menyerah, coba lagi! 😔`;
         }
       }
 
@@ -1220,129 +1380,25 @@
           handleGuess();
         }
       });
-      hintButton.addEventListener("click", handleHint);
-      playAgainButton.addEventListener("click", initializeGuessWordGame);
 
-      // Initialize the Guess Word Game when the section is in view
-      const guessWordGameSection = document.getElementById(
-        "guess-word-game-section"
-      );
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && selectedWord === "") {
-              // Only initialize if not already initialized
-              initializeGuessWordGame();
-            }
-          });
-        },
-        { threshold: 0.1 }
-      ).observe(guessWordGameSection);
-
-      // --- Gallery Modal Logic ---
-      const modal = document.getElementById("imageModal");
-      const modalImg = document.getElementById("img01");
-      const closeBtn = document.getElementsByClassName("modal-close")[0];
-      // Updated to target images within the Swiper slideshow
-      const galleryImgs = document.querySelectorAll(
-        "#photo-slideshow-section .swiper-slide img"
-      );
-
-      galleryImgs.forEach((img) => {
-        img.addEventListener("click", function () {
-          modal.style.display = "flex";
-          modalImg.src = this.src;
-          modalImg.alt = this.alt; // Set alt text for accessibility
-        });
-      });
-
-      closeBtn.addEventListener("click", function () {
-        modal.style.display = "none";
-      });
-
-      modal.addEventListener("click", function (e) {
-        if (e.target === modal) {
-          modal.style.display = "none";
+      hintButton.addEventListener("click", () => {
+        if (!hintUsed) {
+          gameMessage.textContent = `Petunjuk: ${currentHint}`;
+          attemptsLeft = Math.max(0, attemptsLeft - 1); // Kurangi kesempatan 1 kali jika pakai petunjuk
+          hintUsed = true;
+          hintButton.disabled = true; // Nonaktifkan tombol petunjuk setelah dipakai
+          updateGuessWordDisplay();
         }
       });
 
-      // --- Automatic Year Update in Footer ---
+      playAgainButton.addEventListener("click", initializeGuessWordGame);
+
+      // Initialize the guess word game when the page loads
+      initializeGuessWordGame();
+
+      // --- Footer Year ---
       document.getElementById("current-year").textContent =
         new Date().getFullYear();
-
-      // --- Swiper.js Initialization for Photo Slideshow ---
-      const photoSwiper = new Swiper("#photo-slideshow-section .swiper", {
-        loop: true,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: "#photo-slideshow-section .swiper-button-next",
-          prevEl: "#photo-slideshow-section .swiper-button-prev",
-        },
-      });
-
-      // --- Swiper.js Initialization for Video Slideshow ---
-      const videoSwiper = new Swiper("#video-slideshow-section .swiper", {
-        loop: true,
-        autoplay: {
-          delay: 5000, // Slightly longer delay for videos
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: "#video-slideshow-section .swiper-button-next",
-          prevEl: "#video-slideshow-section .swiper-button-prev",
-        },
-        on: {
-          slideChangeTransitionStart: function () {
-            // Pause all videos when slide changes
-            document
-              .querySelectorAll("#video-slideshow-section video")
-              .forEach((video) => video.pause());
-          },
-          slideChangeTransitionEnd: function () {
-            // Play video on active slide if it's a video
-            const activeSlide = videoSwiper.slides[videoSwiper.activeIndex];
-            const activeVideo = activeSlide.querySelector("video");
-            if (activeVideo) {
-              activeVideo.play();
-            }
-          },
-        },
-      });
-
-      // --- Background Music Control ---
-      const backgroundMusic = document.getElementById("background-music");
-
-      // Solusi untuk autoplay yang diblokir: Coba putar musik. Jika gagal, tampilkan tombol.
-      document.addEventListener("DOMContentLoaded", () => {
-        backgroundMusic
-          .play()
-          .then(() => {
-            console.log("Music autoplayed successfully.");
-          })
-          .catch((e) => {
-            console.warn("Music autoplay prevented:", e);
-            playMusicButton.classList.remove("hidden"); // Tampilkan tombol
-            playMusicButton.addEventListener("click", () => {
-              backgroundMusic
-                .play()
-                .catch((error) =>
-                  console.error("Failed to play music on click:", error)
-                );
-              playMusicButton.remove(); // Hapus tombol setelah musik dimainkan
-            });
-          });
-      });
     </script>
   </body>
 </html>
